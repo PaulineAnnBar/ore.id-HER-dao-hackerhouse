@@ -45,9 +45,11 @@ This guide comes with a script that will set up the projects in each article's f
 sh quickstart.sh
 ```
 
-All of the articles will now be ready to start.  Start each article seperatly using ```yarn start``` from inside the articles folder.
+All of the articles will now be ready to start.  Start each article seperatly using ```yarn start``` from inside the article's folder.
 
 ### Manually install project dependencies:
+
+Each article requires a copy of the ```.env.local``` file, which contains your ORE ID Application ID (AppId).  Copy the ```.env.local-example``` file to each article and rename ```.env.local```.
 
 If you wish to run the sample code. It will be necessarry to install the dependencies in each of the article's folder.  
 
@@ -61,6 +63,8 @@ yarn install
 cd 7-Creating_Custom_Transactions
 yarn start
 ```
+
+Or you can run any of the subsequent articles by moving into the directory and running ```yarn start```.
 
 Open http://localhost:3000 to view your application in the browser. The page will reload if you make edits.
 
