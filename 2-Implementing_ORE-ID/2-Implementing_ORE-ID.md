@@ -45,7 +45,7 @@ const oreId = new OreId({
 import { useEffect } from "react";
 ```
 
-6. The *```useEffect()```t* function will be used inside the *App* function.  Let’s initialize ORE ID upon the loading of the React application.
+6. The *```useEffect()```* function will be used inside the *App* function.  Let’s initialize ORE ID upon the loading of the React application.
 
 ```jsx
 export const App = () => {
@@ -63,7 +63,7 @@ export const App = () => {
 };
 ```
 
-7. You should now be able to run your React application and check the console for the output.  Your *App.js* for resemble the following:
+7.The React application should now run and output "OREID is connected" to the console.  *App.js* now will resemble the following:
 
 ```jsx
 import { OreId } from "oreid-js"
