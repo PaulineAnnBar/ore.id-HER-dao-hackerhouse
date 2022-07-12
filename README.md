@@ -13,27 +13,29 @@
 
 ## Overview
 
-This example demonstrates the basics of using the ORE ID
+Welcome to the ORE ID ecosystem.  ORE ID service is your gateway to building Web3.0 applications.  The main features to harness include: account authentication, blockchain account creation, and easy blockchain interaction for your user base.  
 
-- Initializing the oreid-js library with your app's appId
-- How to use oreid-webwidget
-- Handling the login flow
-- Signing a transaction flow
+This article series follows the implementation of ORE ID service into a JavaScript React application.   We will cover the basics of integrating the ORE ID core service.  Explain how to engage user actions with the webpopup plugin.  And, how to create custom transactions using ChainJs.
+
+This guide will walk you step-by-step, from start to finish.  You will learn how to login users with ORE ID, and how to create and sign transaction on the blockchain.  This series prepares an ORE ID powered application that will work on the Ethereum Blockchain.  We use the Ropsten testnet while developing the application so real funds are not used.
 
 
-To install project dependencies use:
+## How to use this walkthrough
 
-```
+Each article has a complete set of code.  The code covers the topic discussed in the corresponding article. The complete project is available in the folder of the final article.  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+### To install project dependencies use:
+
+```shell
 yarn install
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+### Runs the app in the development mode.
 
-    yarn start
+```shell
+ yarn start
+```
 
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
-
-The page will reload if you make edits.
+Open http://localhost:3000 to view your application in the browser. The page will reload if you make edits.
 
 Note: Due to a bug in Create React App 5 - use 'GENERATE_SOURCEMAP=false react-scripts start' to start the app or you may see errors 'Failed to parse source map...'
