@@ -56,3 +56,7 @@ Note: Due to a bug in Create React App 5 - use 'GENERATE_SOURCEMAP=false react-s
 ## Project Clean Up
 Kill the nodejs instances using ```ctrl + c``` in the terminal.
 Then, delete the ```oreid-react-walkthrough``` folder.
+
+## TLDR
+
+This walkthrough was created to show off the core functionality of ORE ID.  ORE ID is a Web3.0 authentication and blockchain interaction service. The goal of this article is to explain how to implement this product into a React application. Follow along to get ORE ID integrated into your application.  You will also learn basic functionality for interacting with the Ethereum Blockchain.

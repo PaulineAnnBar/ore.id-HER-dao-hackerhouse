@@ -125,7 +125,7 @@ Test the transaction and you will be prompted to enter your password/pin.
 ![Sign Prompt](./sign_prompt.png)
 
 
-Then the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Look above get the code to find your ethereum blockchain account.
+Upon successful entry of password/pin, the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Look above get the code to find your ethereum blockchain account.
 
 ### Troubleshooting
 
