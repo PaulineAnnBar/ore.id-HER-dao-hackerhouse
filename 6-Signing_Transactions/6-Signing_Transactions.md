@@ -127,12 +127,25 @@ Test the transaction and you will be prompted to enter your password/pin.
 
 Upon successful entry of password/pin, the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Look above get the code to find your ethereum blockchain account.
 
-### Troubleshooting
+## Troubleshooting
 
-Whitelist Error:
+Error messages will be output to your browser if something goes wrong with the transaction process.  Some common error message examples and the fixes are below.
+
+### ❌ Error: Whitelisting Permission
 
 ```text
 Error: sign_transaction_rejected&error_message=Permission active must be one of the whitelisted permissions. Or contract 0x0000000000000000000000000000000000000000 and action transfer must be whitelisted in App Registration.
 ```
+> ✅ Solution:<br/>
+  Add a whitelist entry to your application's developer dashboard.  For each blockchain action enabled, a proper whitelisting entry must be made.  Whitelisting is important because it allows only the requested actions to be ran on the the blockchain.  This will stop unwanted or malicious actions from being executed by the ORE ID service.
+![Whitelist Entry Example](./whitelist_entry.png)
 
-Resources Error:
+
+### ❌ Error: TxExceededResources
+
+```text
+Error: sign_transaction_rejected&error_message=ChainErrorType:TxExceededResources - Chain Transaction failure: Error Returned error: insufficient funds for gas * price + value on chain network eth_ropsten for user google-oauth2|101800000000000004300 of app t_c304ed0f2bxxxxx98b8c8e91a9874ec5 . Error from chain: {"originalError":{"data":null},"errorType":"TxExceededResources"}
+```
+
+> ✅ Solution: <br />
+You do not have enough funds in your chainAccount to perform the requested action.  Add Ropsten testnet funds using a faucet (Ex: https://faucet.egorfine.com/).
