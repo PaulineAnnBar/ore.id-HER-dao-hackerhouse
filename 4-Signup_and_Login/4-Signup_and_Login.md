@@ -1,9 +1,8 @@
 ## Login and SignUp using ORE ID
 
-<aside>
+```text
 📢 What this article covers: Implement ORE ID login/signup popup
-
-</aside>
+```
 
 > This is a continuation from [Making ORE ID Available Across React Components](https://www.notion.so/Getting-Started-with-ORE-ID-on-React-36bcc9ddcb2342af8284cba7e6a028c8).
 > 
@@ -22,18 +21,18 @@ import { userOreId } from "oreid-react";
 
 ```jsx
 export const LoginPage = () => {
-	const oreId = userOreId();
+    const oreId = userOreId();
 
-	return (
-		<div>
-			<button>
-				Google
-			</button>
-			<button>
-				Email
-			</button>
-		</div>
-	);
+    return (
+        <div>
+            <button>
+                Google
+            </button>
+            <button>
+                Email
+            </button>
+        </div>
+    );
 }
 ```
 
@@ -42,28 +41,28 @@ export const LoginPage = () => {
 ```jsx
 // Inside LoginPage component
 // ...
-	const [error, setError] = useState("");
-	
-	const onError = (error) => {
-		console.log("Login failed", error);
-		setError(error);
-	};
-	
-	const onSuccess = ({ user }) => {
-		console.log("Login successfull. User Data: ", user);
-	};
+    const [error, setError] = useState("");
+    
+    const onError = (error) => {
+        console.log("Login failed", error);
+        setError(error);
+    };
+    
+    const onSuccess = ({ user }) => {
+        console.log("Login successfull. User Data: ", user);
+    };
 ```
 
 4. The *```loginWithProvider```* function will initiate the pop up window that carries out the sign up/login sequence.  The function will accept an *```AuthProvider```* object which tells the webpopup the login flow to initialize.
 
 ```jsx
 const loginWithProvider = (provider) => {
-		oreId.popup
-			.auth({
-				provider,
-			})
-			.then(onSuccess)
-			.catch(onError);
+    oreId.popup
+        .auth({
+            provider,
+        })
+        .then(onSuccess)
+        .catch(onError);
 };
 ```
 
@@ -75,17 +74,17 @@ import { useOreId } from "oreid-react";
 import { useState } from "react";
 
 export const LoginPage = () => {
-	const oreId = userOreId();
+    const oreId = userOreId();
     const [error, setError] = useState("");
-	
-	const onError = (error) => {
-		console.log("Login failed", error);
-		setError(error);
-	};
-	
-	const onSuccess = ({ user }) => {
-		console.log("Login successfull. User Data: ", user);
-	};
+    
+    const onError = (error) => {
+        console.log("Login failed", error);
+        setError(error);
+    };
+    
+    const onSuccess = ({ user }) => {
+        console.log("Login successfull. User Data: ", user);
+    };
 
     const loginWithProvider = (provider) => {
         oreId.popup
@@ -126,15 +125,15 @@ import { LoginPage } from "./LoginPage";
 // ...
 
 const AppWithProvider = () => {
-	const isLoggedIn = useIsLoggedIn();
-	return (
-		<div>
-			{/* The following if statement will display */}
-			{/* the logged in status of the user. The login */}
+    const isLoggedIn = useIsLoggedIn();
+    return (
+        <div>
+            {/* The following if statement will display */}
+            {/* the logged in status of the user. The login */}
             {/* page will be shown if the user is logged out. */}
             {isLoggedIn ? "Logged In" : <LoginPage />}
-		</div>
-	);
+        </div>
+    );
 };
 ```
 

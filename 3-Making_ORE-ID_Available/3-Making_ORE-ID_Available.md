@@ -24,11 +24,11 @@ import { OreidProvider } from "oreid-react";
 
 ```jsx
 // ...
-	return (
-		<OreidProvider oreId={ oreId }>
-			Hello World!
-		</OreidProvider>
-	);
+    return (
+        <OreidProvider oreId={ oreId }>
+            Hello World!
+        </OreidProvider>
+    );
 };
 ```
 
@@ -40,14 +40,14 @@ import { useIsLoggedIn } from "oreid-react";
 
 // ...
 const AppWithProvider = () => {
-	const isLoggedIn = useIsLoggedIn()
-	return (
-		<div>
-			{/* The following if statement will display */}
-			{/* the logged in status of the user. */}
-      		{isLoggedIn ? "Logged In" : "Logged Out"}
-		</div>
-	);
+    const isLoggedIn = useIsLoggedIn()
+    return (
+        <div>
+            {/* The following if statement will display */}
+            {/* the logged in status of the user. */}
+            {isLoggedIn ? "Logged In" : "Logged Out"}
+        </div>
+    );
 };
 ```
 
@@ -55,11 +55,11 @@ const AppWithProvider = () => {
 
 ```jsx
 const AppWithProvider = () => {
-	return (
-		<div>
-      		Hello World!
-		</div>
-	);
+    return (
+        <div>
+              Hello World!
+        </div>
+    );
 };
 ```
 
@@ -74,46 +74,46 @@ import { useEffect, useState } from "react"
 import { WebPopup } from "oreid-webpopup"
 
 const oreId = new OreId({
-	appName: "ORE-ID Sample App",
-	appId: OREID_APP_ID,
-	oreIdUrl: "https://service.oreid.io",
-	plugins: {
-		popup: WebPopup(),
-  	},
+    appName: "ORE-ID Sample App",
+    appId: OREID_APP_ID,
+    oreIdUrl: "https://service.oreid.io",
+    plugins: {
+        popup: WebPopup(),
+      },
 });
 
 const AppWithProvider = () => {
-	const isLoggedIn = useIsLoggedIn()
-	return (
-		<div>
-			{/* The following if statement will display */}
-			{/* the logged in status of the user. */}
-      		{isLoggedIn ? "Logged In" : "Logged Out"}
-		</div>
-	);
+    const isLoggedIn = useIsLoggedIn()
+    return (
+        <div>
+            {/* The following if statement will display */}
+            {/* the logged in status of the user. */}
+              {isLoggedIn ? "Logged In" : "Logged Out"}
+        </div>
+    );
 };
 
 export const App = () => {
-	const [oreidReady, setOreidReady] = useState(false);
+    const [oreidReady, setOreidReady] = useState(false);
 
-	useEffect(() => {
-		oreId.init()
-		.then(() => {
-			setOreidReady(true);
-			console.log("OREID is connected");
-		})
-		.catch((error) => console.log(error));
-	}, []);
+    useEffect(() => {
+        oreId.init()
+        .then(() => {
+            setOreidReady(true);
+            console.log("OREID is connected");
+        })
+        .catch((error) => console.log(error));
+    }, []);
 
-  	if (!oreidReady) {
-		return <>Loading...</>;
-	};
+      if (!oreidReady) {
+        return <>Loading...</>;
+    };
 
-	return (
-		<OreidProvider oreId={ oreId }>
-			<AppWithProvider />
-		</OreidProvider>
-	);
+    return (
+        <OreidProvider oreId={ oreId }>
+            <AppWithProvider />
+        </OreidProvider>
+    );
 };
 
 export default App
