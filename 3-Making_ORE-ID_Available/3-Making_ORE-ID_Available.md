@@ -27,7 +27,7 @@ import { OreidProvider, useIsLoggedIn } from "oreid-react";
     );
 // ...
 ```
->Breaking down the above code:
+>Breaking down the above code:<br />
 → *```<OreidProvider>```* wrapper takes in a variable named *```oreId```*. <br />
 → The part of the application that requires access to the OreId object will need to be contained within this wrapper. <br />
 → The wrapper is closed out.

@@ -62,7 +62,7 @@ export const App = () => {
     );
 };
 ```
->Breaking down the above code:  
+>Breaking down the above code:  <br />
 → oreId’s init() function is being called from within the UseEffect() function. <br />
 → init() is an async function. <br />
 → Upon success of initialization, feedback is printed to the console stating “OREID is connected” or returning the error.<br />
