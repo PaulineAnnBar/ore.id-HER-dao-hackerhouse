@@ -126,3 +126,13 @@ Test the transaction and you will be prompted to enter your password/pin.
 
 
 Then the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Look above get the code to find your ethereum blockchain account.
+
+### Troubleshooting
+
+Whitelist Error:
+
+```text
+Error: sign_transaction_rejected&error_message=Permission active must be one of the whitelisted permissions. Or contract 0x0000000000000000000000000000000000000000 and action transfer must be whitelisted in App Registration.
+```
+
+Resources Error:
