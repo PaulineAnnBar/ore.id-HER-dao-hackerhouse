@@ -24,7 +24,18 @@ This series prepares an ORE ID powered application that will work on the ```Ethe
 
 Each article has a complete set of code.  The code covers the topic discussed in the corresponding article. The complete project is available in the folder of the final article.  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
+### Sign Up for an ORE ID Developer Account
+
+## Quick Setup
+This guide comes with a script that will set up the projects in each article's folder to be ran.  Be sure to to first add your app_id to the .env.local-example file.  Then, run the quickstart script by entering the following in the command shell.
+
+```bash
+sh quickstart.sh
+```
+
 ### To install project dependencies use:
+
+If you wish to run the sample code. It will be necessarry to install the dependencies in each of the article's folder.  
 
 ```shell
 yarn install
@@ -39,3 +50,7 @@ yarn install
 Open http://localhost:3000 to view your application in the browser. The page will reload if you make edits.
 
 Note: Due to a bug in Create React App 5 - use 'GENERATE_SOURCEMAP=false react-scripts start' to start the app or you may see errors 'Failed to parse source map...'
+
+## Project Clean Up
+Kill the nodejs instances using ```ctrl + c``` in the terminal.
+Then, delete the ```oreid-react-walkthrough``` folder.
