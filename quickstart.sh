@@ -17,5 +17,5 @@ cp -R node_modules ../4-Signup_and_Login
 cp -R node_modules ../5-Log_Out
 cp -R node_modules ../6-Signing_Transactions
 
-echo "Use `yarn start` in each folder to run that article's sample"
+echo "Use yarn start in each folder to run that article's sample"
 
