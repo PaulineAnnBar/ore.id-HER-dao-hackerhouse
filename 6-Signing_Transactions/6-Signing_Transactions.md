@@ -27,6 +27,7 @@ export const SignTransaction = () => {
     const oreId = useOreId();
     const user = useUser();
     const chainNetwork = ChainNetwork.EthRopsten;
+    const[ txnId, setTxnId ] = useState("");
     const[ error, setError ] = useState("");
 
     const onError = ( error ) => {
@@ -38,6 +39,8 @@ export const SignTransaction = () => {
         console.log( 
             "Transaction Successful. ", JSON.stringify(result)
         );
+        setTxnId(result.transactionId)
+
     };
 
 	return(
@@ -45,14 +48,14 @@ export const SignTransaction = () => {
             <button>
                 Send Sample Transaction
             </button>
-
+            {txnId && <div>Transaction Id: {txnId}</div>}
             {error && <div>Error: {error.message}</div>}
         </div>
     );
 }
 ```
 
-3. Next we will create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
+3. Next, create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
 
 ```jsx
 const handleSign = async () => {
@@ -70,4 +73,56 @@ const handleSign = async () => {
 }
 ```
 
-4. *```handleSign()```* is appended with the transaction we will be pushing to the blockchain
+4. *```handleSign()```* is appended with the transaction that is being pushed to the blockchain.  A JSON object named *```transactionBody```* will hold the details of a very simple transaction.  The transaction transfers zero value to yourself.  This is done to test the transaction ability.
+
+```jsx
+        const transactionBody = {
+            from: signingAccount.chainAccount,
+            to: signingAccount.chainAccount,
+            value: 0
+        };
+```
+
+5. While still building out the *```handleSign()```* function, it is now time to build the full transaction that will be signed by the user and sent to the blockchain.   The oreId instence calls the *``createTransaction()``* function and passes it the necessary pparameters.  We are returned a transaction object.
+
+```jsx
+        const transaction = await oreId.createTransaction({
+            chainAccount: signingAccount.chainAccount,
+            chainNetwork: signingAccount.chainNetwork,
+            //@ts-ignore
+            transaction: transactionBody,
+            signOptions: {
+                broadcast: true,
+                returnSignedTransaction: false,
+            },
+        });
+```
+
+6. To finish *```handleSign()```*, the oreId instance uses the webpopup plugin by calling *```oreId.webpopup.sign()```*.  This launches the webpopup and begins the transaction signing flow. 
+
+```jsx
+        oreId.popup
+            .sign({ transaction })
+            .then( onSuccess )
+            .catch( onError );
+```
+
+7. Hook up the handleSign() function to onClick button.
+
+```jsx
+            <button
+                onClick={() => {
+                    handleSign()
+                }}
+            >
+                Send Sample Transaction
+            </button>
+```
+
+
+Test the transaction and you will be prompted to enter your password/pin.
+
+![Sign Prompt](./sign_prompt.png)
+
+
+Then the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Look above get the code to find your ethereum blockchain account.

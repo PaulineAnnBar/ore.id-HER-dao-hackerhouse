@@ -7,6 +7,7 @@ export const SignTransaction = () => {
     const oreId = useOreId();
     const user = useUser();
     const chainNetwork = ChainNetwork.EthRopsten;
+    const[ txnId, setTxnId ] = useState("")
     const[ error, setError ] = useState("")
 
     const onError = (error) => {
@@ -18,6 +19,7 @@ export const SignTransaction = () => {
         console.log( 
             "Transaction Successful. ", JSON.stringify(result)
         );
+        setTxnId(result.transactionId);
     };
 
     const handleSign = async () => {
@@ -67,6 +69,7 @@ export const SignTransaction = () => {
             </button>
 
             {error && <div>Error: {error.message}</div>}
+            {txnId && <div>Transaction Id: {txnId}</div>}
         </div>
     );
 };
