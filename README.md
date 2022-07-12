@@ -39,13 +39,15 @@ Each article has a complete set of code.  The code covers the topic discussed in
 Create a new ORE ID application at https://oreid.io/developer/new-app. Make sure you select Ethereum Ropsten to follow along with this walkthrough.
 
 ### Quick Setup
-This guide comes with a script that will set up the projects in each article's folder to be ran.  Be sure to to first add your app_id to the .env.local-example file.  Then, run the quickstart script by entering the following in the command shell.
+This guide comes with a script that will set up the projects in each article's folder for use.  Be sure to first add your app_id to the .env.local-example file.  Then, run the quickstart script by entering the following in the command shell.
 
 ```bash
 sh quickstart.sh
 ```
 
-### To install project dependencies use:
+All of the articles will now be ready to start.  Start each article seperatly using ```yarn start``` from inside the articles folder.
+
+### Manuall install project dependencies:
 
 If you wish to run the sample code. It will be necessarry to install the dependencies in each of the article's folder.  
 
@@ -53,15 +55,16 @@ If you wish to run the sample code. It will be necessarry to install the depende
 yarn install
 ```
 
-### Runs the app in the development mode.
+### Run the final app in development mode:
 
 ```shell
- yarn start
+cd 7-Creating_Custom_Transactions
+yarn start
 ```
 
 Open http://localhost:3000 to view your application in the browser. The page will reload if you make edits.
 
-Note: Due to a bug in Create React App 5 - use 'GENERATE_SOURCEMAP=false react-scripts start' to start the app or you may see errors 'Failed to parse source map...'
+> Note: Due to a bug in Create React App 5 - use ```'GENERATE_SOURCEMAP=false react-scripts start'``` to start the app or you may see the error 'Failed to parse source map...'
 
 ## Project Clean Up
 Kill the nodejs instances using ```ctrl + c``` in the terminal.
