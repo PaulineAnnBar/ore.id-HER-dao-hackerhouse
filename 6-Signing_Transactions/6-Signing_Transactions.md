@@ -54,7 +54,7 @@ export const SignTransaction = () => {
     );
 }
 ```
-> 💥 Polygon adaption!  To interact with the Polygon blockchain, change the *```chainNetwork```* variable from ```ChainNetwork.EthRopsten``` to ```'polygon_mumbai'```.  Your ORE ID application will have to be set for Polygon Mumbai network.  The application network can currently only be chosen while creating a new app.  If you did not select Polygon when the ORE ID application was created;  You can create a new app [here](https://oreid.io/developer/new-app).
+> 💥 Polygon adaption!  To interact with the Polygon blockchain, change the *```chainNetwork```* variable from ```ChainNetwork.EthRopsten``` to ```'polygon_mumbai'```.  Resulting in the line ```const chainNetwork = 'polygon_mumbai'```.  Your ORE ID application will have to be set for Polygon Mumbai network.  The application network can currently only be chosen while creating a new app.  If you did not select Polygon when the ORE ID application was created;  You can create a new app [here](https://oreid.io/developer/new-app).
 
 3. Next, create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
 
