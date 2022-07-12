@@ -4,10 +4,6 @@
 📢 What this article covers: How to use OreidProvider.
 ```
 
-
-> This is a continuation from [Implementing ORE ID into a React application](https://www.notion.so/Getting-Started-with-ORE-ID-on-React-36bcc9ddcb2342af8284cba7e6a028c8).
-> 
-
 1. The npm package *[oreid-react](https://www.npmjs.com/package/oreid-react)* contains many goodies for the react framework.  Add the package into your project.
 
 ```bash

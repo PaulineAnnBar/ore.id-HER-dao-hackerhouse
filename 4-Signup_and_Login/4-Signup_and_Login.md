@@ -4,9 +4,6 @@
 📢 What this article covers: Implement ORE ID login/signup popup
 ```
 
-> This is a continuation from [Making ORE ID Available Across React Components](https://www.notion.so/Getting-Started-with-ORE-ID-on-React-36bcc9ddcb2342af8284cba7e6a028c8).
-> 
-
 For this article we will be creating a new React component in a new file named *LoginPage.js*.  This file will be stored in the *src/* directory.
 
 1. The first step is to import *```useOreId()```*.
