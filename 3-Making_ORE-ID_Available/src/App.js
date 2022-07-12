@@ -1,5 +1,5 @@
 import { OreId } from "oreid-js";
-import { OreidProvider } from "oreid-react";
+import { OreidProvider, useIsLoggedIn } from "oreid-react";
 import { useEffect, useState } from "react";
 import { WebPopup } from "oreid-webpopup";
 
@@ -12,8 +12,19 @@ const oreId = new OreId({
     },
 });
 
-export const App = () => {
-const [oreidReady, setOreidReady] = useState(false);
+const AppWithProvider = () => {
+    const isLoggedIn = useIsLoggedIn()
+    return (
+        <div>
+            {/* The following if statement will display */}
+            {/* the logged in status of the user. */}
+              {isLoggedIn ? "Logged In" : "Logged Out"}
+        </div>
+    );
+};
+
+export const App = () => {  
+    const [oreidReady, setOreidReady] = useState(false);
 
     useEffect(() => {
         oreId.init()
@@ -24,13 +35,13 @@ const [oreidReady, setOreidReady] = useState(false);
             .catch((error) => console.log(error));
     }, []);
 
-  if (!oreidReady) {
+    if (!oreidReady) {
         return <>Loading...</>;
     }
 
     return (
         <OreidProvider oreId={ oreId }>
-            Hello World!
+            <AppWithProvider />
         </OreidProvider>
     );
 };
