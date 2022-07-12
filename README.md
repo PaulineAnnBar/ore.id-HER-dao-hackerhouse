@@ -13,11 +13,11 @@
 
 ## Overview
 
-Welcome to the ORE ID ecosystem.  ORE ID service is your gateway to building Web3.0 applications.  The main features to harness include: account authentication, blockchain account creation, and easy blockchain interaction for your user base.  
+Welcome to the ```ORE ID``` ecosystem.  ORE ID service is your gateway to building Web3.0 applications.  The main features to harness include: account authentication, blockchain account creation, and easy blockchain interaction for your user base.  
 
-This article series follows the implementation of ORE ID service into a JavaScript React application.   We will cover the basics of integrating the ORE ID core service.  Explain how to engage user actions with the webpopup plugin.  And, how to create custom transactions using ChainJs.
+This article series follows the implementation of ORE ID service into a JavaScript ```React``` application.   We will cover the basics of integrating the ORE ID core service.  Explain how to engage user actions with the ```webpopup plugin```.  And, how to create custom transactions using ```ChainJs```.  This guide will walk you step-by-step through the creation of a simple ORE ID application in React.
 
-This guide will walk you step-by-step, from start to finish.  You will learn how to login users with ORE ID, and how to create and sign transaction on the blockchain.  This series prepares an ORE ID powered application that will work on the Ethereum Blockchain.  We use the Ropsten testnet while developing the application so real funds are not used.
+This series prepares an ORE ID powered application that will work on the ```Ethereum``` Blockchain.  We use the ```Ropsten``` testnet while developing the application so real funds are not used.
 
 
 ## How to use this walkthrough
