@@ -15,19 +15,25 @@
 
 Welcome to the ```ORE ID``` ecosystem.  ORE ID service is your gateway to building Web3.0 applications.  The main features to harness include: account authentication, blockchain account creation, and easy blockchain interaction for your user base.  
 
-This article series follows the implementation of ORE ID service into a JavaScript ```React``` application.   We will cover the basics of integrating the ORE ID core service.  Explain how to engage user actions with the ```webpopup plugin```.  And, how to create custom transactions using ```ChainJs```.  This guide will walk you step-by-step through the creation of a simple ORE ID application in React.
+This article series follows the implementation of ORE ID service into a JavaScript ```React``` application.   The series will:
+* Walk through the basics of integrating the ORE ID core service.  
+* Explain how to engage user actions with the ```webpopup plugin```. 
+* Quickly transfer tokens by creating Transaction objects. 
+* How to create custom transactions using ```ChainJs```.  
 
-This series prepares an ORE ID powered application that will work on the ```Ethereum``` Blockchain.  We use the ```Ropsten``` testnet while developing the application so real funds are not used.
+At the end, this guide will have walked you step-by-step through the creation of a simple, but powerful, ORE ID application in React.
+
+This series prepares an ORE ID powered application that will work on the ```Ethereum``` Blockchain.  We use the ```Ropsten``` testnet while developing the application, so real funds are not used.
 
 > 💥 Note: The application in this guide can be easily adapted to run on the *```Polygon```* chain.  Look for tips, starting in article six, for info on how to adapt the application for the Polygon Blockchain.  Multi-chain is one of the main facets of the ORE ID service.  Creating apps that work with multiple blockchains will require very minor code changes. Write the code once, and easily operate on different blockchains.
 
 ## Tools used in this guide
 
-1. [*oreid-js*](https://www.npmjs.com/package/oreid-js)
-2. [*oreid-react*](https://www.npmjs.com/package/oreid-react)
-3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup)
-4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js)
-5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum)
+1. [*oreid-js*](https://www.npmjs.com/package/oreid-js) [4.1.1]
+2. [*oreid-react*](https://www.npmjs.com/package/oreid-react) [1.4.1]
+3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup) [2.0.0]
+4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js) [4.7.1]
+5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) [4.7.0]
 
 
 ## How to use this walkthrough
