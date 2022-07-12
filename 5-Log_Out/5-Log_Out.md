@@ -36,6 +36,12 @@ const AppWithProvider = () => {
 
 If you’ve been following along with us, your app should be logging users in and out of the ORE ID service.  Check your user signups using the [developer dashboard](https://oreid.io/developer). 
 
-![Sample Developer Dashboard Users Display](dev_dashboard_users.png)
+![Sample Developer Dashboard Users Display](first_user.png)
+
+### Troubleshooting
+```text
+Error: sign_transaction_rejected&error_message=Permission active must be one of the whitelisted permissions. Or contract 0x0000000000000000000000000000000000000000 and action transfer must be whitelisted in App Registration.
+```
+
 
 Next article, blockchain transactions will be explored.  ORE ID is a multi-chain service supporting ALGO, WAX, EOS, ETH, TELOS, and POLYGON.  With many more chains planned for the near future.
