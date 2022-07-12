@@ -9,6 +9,8 @@
 5. [Logging Out](5-Log_Out/5-Log_Out.md)
 6. [Signing Transactions](6-Signing_Transactions/6-Signing_Transactions.md)
 7. [Creating Custom Transaction using ChainJs](7-Creating_Custom_Transactions/7-Creating_Custom_Transactions.md)
+
+
 ## Overview
 
 This example demonstrates the basics of using the ORE ID
@@ -17,7 +19,7 @@ This example demonstrates the basics of using the ORE ID
 - How to use oreid-webwidget
 - Handling the login flow
 - Signing a transaction flow
-  <br><br>
+
 
 To install project dependencies use:
 

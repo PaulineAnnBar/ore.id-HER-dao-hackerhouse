@@ -1,13 +1,12 @@
 ## Signing Transaction with ORE ID
 
-<aside>
+```text
 📢 What this article covers: Enable transaction signing in your app.
-
-</aside>
+```
 
 It’s time to add real blockchain functionality to our React application.  This will enable the webpopup to engage the user in a transaction signing flow.  
 
-The user will be prompted to input their password/pin.  Then, ORE ID service will do the work by preparing and sending your transaction to the blockchain.  Returned, is the transactions blockchain id and ORE ID service process id.  
+The user will be prompted to input their password/pin.  Then, ORE ID service will do the work by preparing and sending your transaction to the blockchain.  Returned, is the transaction's blockchain id and ORE ID service process id.  
 
 This article will use Ethereum. But, later in the series, examples of other supported chains will be demo’d.  Let’s get started by creating a *SignTransaction.js* file.  This will hold the new React component being built in this article.
 
@@ -41,7 +40,7 @@ export const SignTransaction = () => {
         );
     };
 
-		return(
+	return(
         <div>
             <button>
                 Send Sample Transaction
@@ -53,22 +52,22 @@ export const SignTransaction = () => {
 }
 ```
 
-3. Next we will create another function named *handleSign().* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
+3. Next we will create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
 
 ```jsx
 const handleSign = async () => {
-		const signingAccount = user.chainAccounts.find(
-		    (ca) => ca.chainNetwork ===  chainNetwork
-		);
-		
-		const errorMsg = `User doesn not have any accounts on ${chainNetwork}`;
-		
-		if (!signingAccount) {
-		    console.log( errorMsg );
-		    onError( errorMsg );
-		    return;
-		};
+    const signingAccount = user.chainAccounts.find(
+        (ca) => ca.chainNetwork ===  chainNetwork
+    );
+    
+    const errorMsg = `User doesn not have any accounts on ${chainNetwork}`;
+    
+    if (!signingAccount) {
+        console.log( errorMsg );
+        onError( errorMsg );
+        return;
+    };
 }
 ```
 
-4. *HandleSign()* is appended with the transaction we will be pushing to the blockchain
+4. *```handleSign()```* is appended with the transaction we will be pushing to the blockchain
