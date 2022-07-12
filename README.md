@@ -19,6 +19,16 @@ This article series follows the implementation of ORE ID service into a JavaScri
 
 This series prepares an ORE ID powered application that will work on the ```Ethereum``` Blockchain.  We use the ```Ropsten``` testnet while developing the application so real funds are not used.
 
+> 💥 Note: The application in this guide can be easily adapted to run on the *```Polygon```* chain.  Look for tips, starting in article six, for info on how to adapt the application for the Polygon Blockchain.  Multi-chain is one of the main facets of the ORE ID service.  Creating apps that work with multiple blockchains will require very minor code changes. Write the code once, and easily operate on different blockchains.
+
+## Tools used in this guide
+
+1. [*oreid-js*](https://www.npmjs.com/package/oreid-js)
+2. [*oreid-react*](https://www.npmjs.com/package/oreid-react)
+3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup)
+4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js)
+5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum)
+
 
 ## How to use this walkthrough
 

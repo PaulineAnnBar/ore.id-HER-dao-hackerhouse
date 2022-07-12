@@ -11,6 +11,8 @@
 5-Log_Out/.env.local
 6-Signing_Transactions/.env.local
 6-Signing_Transactions/node_modules
+7-Creating_Custom_Transactions/node_modules
+7-Creating_Custom_Transactions/.env.local
 
 .DS_Store
 */.DS_Store
