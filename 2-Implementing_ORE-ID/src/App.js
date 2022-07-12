@@ -15,10 +15,10 @@ const oreId = new OreId({
 export const App = () => {
     useEffect(() => {
         oreId.init()
-        .then(() => {
-            console.log("OREID is connected")
-        })
-        .catch((error) => console.log(error));
+            .then(() => {
+                console.log("OREID is connected")
+            })
+            .catch((error) => console.log(error));
     }, []);
 
     return (

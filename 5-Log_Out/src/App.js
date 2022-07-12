@@ -28,39 +28,39 @@ const LogoutUser = () => {
 };
 
 const AppWithProvider = () => {
-	const isLoggedIn = useIsLoggedIn()
-	return (
-		<div>
+    const isLoggedIn = useIsLoggedIn()
+    return (
+        <div>
             {isLoggedIn ? 
                 <div>
                     <LogoutUser />
                 </div> 
             : <LoginPage />}
-		</div>
-	);
+        </div>
+    );
 };
 
 export const App = () => {
 const [oreidReady, setOreidReady] = useState(false);
 
-	useEffect(() => {
+    useEffect(() => {
         oreId.init()
-        .then(() => {
-            setOreidReady(true);
-            console.log("OREID is connected");
-        })
-        .catch((error) => console.log(error));
-	}, []);
+            .then(() => {
+                setOreidReady(true);
+                console.log("OREID is connected");
+            })
+            .catch((error) => console.log(error));
+    }, []);
 
     if (!oreidReady) {
-		return <>Loading...</>;
-	}
+        return <>Loading...</>;
+    }
 
-	return (
-		<OreidProvider oreId={ oreId }>
-			<AppWithProvider />
-		</OreidProvider>
-	);
+    return (
+        <OreidProvider oreId={ oreId }>
+            <AppWithProvider />
+        </OreidProvider>
+    );
 };
 
 export default App
