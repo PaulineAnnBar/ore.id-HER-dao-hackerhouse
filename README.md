@@ -47,7 +47,7 @@ sh quickstart.sh
 
 All of the articles will now be ready to start.  Start each article seperatly using ```yarn start``` from inside the articles folder.
 
-### Manuall install project dependencies:
+### Manually install project dependencies:
 
 If you wish to run the sample code. It will be necessarry to install the dependencies in each of the article's folder.  
 
