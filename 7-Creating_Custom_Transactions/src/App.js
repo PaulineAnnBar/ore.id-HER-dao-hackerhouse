@@ -14,7 +14,6 @@ appName: "ORE-ID Sample App",
     },
 });
 
-
 const LogoutUser = () => {
     return (
         <button

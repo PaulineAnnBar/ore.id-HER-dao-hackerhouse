@@ -4,11 +4,11 @@
 📢 What this article covers: Enable transaction signing in your app.
 ```
 
-It’s time to add real blockchain functionality to our React application.  This will enable the webpopup to engage the user in a transaction signing flow.  
+It’s time to add real blockchain functionality to our React application.  This will enable the *```webpopup```* to engage the user in a transaction signing flow.  
 
-The user will be prompted to input their password/pin.  Then, ORE ID service will do the work by preparing and sending your transaction to the blockchain.  Returned, is the transaction's blockchain id and ORE ID service process id.  
+The user will be prompted to input their password/pin.  Then, ORE ID service will do the work by preparing and sending your *```transaction```* to the blockchain.  Returned, is the transaction's *```blockchain id```* and ORE ID service process id.  
 
-This article will use Ethereum. But, later in the series, examples of other supported chains will be demo’d.  Let’s get started by creating a *SignTransaction.js* file.  This will hold the new React component being built in this article.
+This article will use *```Ethereum```* (also included are instructions on how to adapt this code to *```Polygon```*). But, later in the series, examples of other supported chains will be demo’d.  Let’s get started by creating a *SignTransaction.js* file.  This will hold the new React component being built in this article.
 
 1. Import the dependencies of our new module.
 
@@ -54,13 +54,14 @@ export const SignTransaction = () => {
     );
 }
 ```
+> 💥 Polygon adaption!  To interact with the Polygon blockchain, change the *```chainNetwork```* variable from ```ChainNetwork.EthRopsten``` to ```'polygon_mumbai'```.  Your ORE ID application will have to be set for Polygon Mumbai network.  The application network can currently only be chosen while creating a new app.  If you did not select Polygon when the ORE ID application was created;  You can create a new app [here](https://oreid.io/developer/new-app).
 
 3. Next, create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
 
 ```jsx
 const handleSign = async () => {
     const signingAccount = user.chainAccounts.find(
-        (ca) => ca.chainNetwork ===  chainNetwork
+        (ca) => ca.chainNetwork === chainNetwork
     );
     
     const errorMsg = `User doesn not have any accounts on ${chainNetwork}`;
