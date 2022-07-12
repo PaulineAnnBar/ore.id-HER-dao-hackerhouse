@@ -20,9 +20,9 @@ Setting up your development environment is an important first step to working wi
 
 ORE ID can be easily added to a new create-react-app project or a custom React application.  
 
-But, first you must sign up for a developer’s account at [https://oreid.io/developer](https://oreid.io/developer).  Simply follow the [developer dashboard instructions](https://www.notion.so/Developer-Dashboard-e8828eec687e4e9bbd4673582f79542b).  
+But, first you must sign up for a developer’s account at [https://oreid.io/developer](https://oreid.io/developer).  Simply follow the [developer dashboard instructions](https://aikon.notion.site/Developer-Dashboard-e8828eec687e4e9bbd4673582f79542b).  
 
-You will need your application’s *appId* to interact with the ORE ID service.  The *appId* can be found under the *settings* section of the developer dashboard.  You may also need to pay attention to your application’s [funding account](https://www.notion.so/Funding-Account-60441b1822c94b89b10ab3987ab53074), authentication providers, and [action whitelist](https://www.notion.so/Whitelisting-blockchain-actions-9027fd7f7e3e4463b9fd13dfaf06f59e) (These topics will be addressed later). 
+You will need your application’s *appId* to interact with the ORE ID service.  The *appId* can be found under the *settings* section of the developer dashboard.  You may also need to pay attention to your application’s [funding account](https://aikon.notion.site/Funding-Account-60441b1822c94b89b10ab3987ab53074), authentication providers, and [action whitelist](https://aikon.notion.site/Whitelisting-blockchain-actions-9027fd7f7e3e4463b9fd13dfaf06f59e) (These topics will be addressed later). 
 
 ### Start with create-react-app
 

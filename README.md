@@ -26,7 +26,9 @@ Each article has a complete set of code.  The code covers the topic discussed in
 
 ### Sign Up for an ORE ID Developer Account
 
-## Quick Setup
+Create a new ORE ID application at https://oreid.io/developer/new-app. Make sure you select Ethereum Ropsten to follow along with this walkthrough.
+
+### Quick Setup
 This guide comes with a script that will set up the projects in each article's folder to be ran.  Be sure to to first add your app_id to the .env.local-example file.  Then, run the quickstart script by entering the following in the command shell.
 
 ```bash
