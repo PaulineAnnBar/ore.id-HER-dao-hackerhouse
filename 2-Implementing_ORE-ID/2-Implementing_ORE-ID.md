@@ -30,12 +30,12 @@ import { WebPopup } from "oreid-webpopup";
 
 ```jsx
 const oreId = new OreId({
-  appName: "ORE-ID Sample App",
-  appId: OREID_APP_ID,
-  oreIdUrl: "https://service.oreid.io",
-  plugins: {
-    popup: WebPopup(),
-  },
+    appName: "ORE-ID Sample App",
+    appId: OREID_APP_ID,
+    oreIdUrl: "https://service.oreid.io",
+    plugins: {
+        popup: WebPopup(),
+    },
 });
 ```
 
@@ -53,11 +53,12 @@ export const App = () => {
         oreId.init()
         .then(() => {
             console.log("OREID is connected")
-        }).catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     return (
-         "Hello World!"
+        "Hello World!"
     );
 };
 ```
