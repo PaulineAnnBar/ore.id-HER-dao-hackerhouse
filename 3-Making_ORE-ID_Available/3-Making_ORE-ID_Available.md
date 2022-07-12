@@ -25,8 +25,12 @@ import { OreidProvider, useIsLoggedIn } from "oreid-react";
             Hello World!
         </OreidProvider>
     );
-};
+// ...
 ```
+>Breaking down the above code:
+→ *```<OreidProvider>```* wrapper takes in a variable named *```oreId```*. <br />
+→ The part of the application that requires access to the OreId object will need to be contained within this wrapper. <br />
+→ The wrapper is closed out.
 
 4. Let’s create a new React component which will need to use *```oreId```* service.   The component will be named *```AppWithProvider```.* Along with the new component, import the *```useIsLoggedIn```()* function. This function will check if the user is logged in and returns True/False. 
 

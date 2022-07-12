@@ -36,7 +36,7 @@ export const LoginPage = () => {
 3. Two functions and a React state are called to prepare for the user login process.  *error* and *setError* will be used to display error information to the page.
 *```onSuccess()```* prints the user's data to the console.  
 
-The returned *```{user}```* object will automatically be stored in the React component, access it by calling *```useUser()```* from the oreid-react package. (This will covered in article 6).
+
 
 ```jsx
 // Inside LoginPage component
