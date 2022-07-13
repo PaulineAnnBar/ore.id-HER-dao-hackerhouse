@@ -25,7 +25,8 @@ const getChainAccount = (user, chainNetwork) => {
 };
 
 const createErc20TransferTxn = async (contractAddress, signingAccount, recipient, amount) => {
-    const connectChain = async (signingAccount) => {
+
+    const connectChain = async ( ) => {
         const endpoints = [
             {
                 url: new URL('https://ropsten.infura.io/v3/fc379c787fde4363b91a61a345e3620a'),
@@ -59,18 +60,19 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
     });
 
     const composeErc20TransferParams = {
-        contractAddress: toEthereumAddress(contractAddress), // ERC-20 Smart contract address for USDC
+        contractAddress: toEthereumAddress(contractAddress), 
         to: toEthereumAddress(recipient),
         from:  toEthereumAddress(signingAccount.chainAccount),
         value: amount,
-        precision: 18
+        precision: 18,
     };
 
     const action = await chain.composeAction(
         ModelsEthereum.EthereumChainActionType.ERC20Transfer,
         composeErc20TransferParams
+    // ).then((result) => {console.log(result)}).catch(({error}) => {console.log( error.message)});
     );
-
+// 
     transactionBody.actions = [action];
 
     await transactionBody.prepareToBeSigned();
@@ -87,27 +89,27 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
 
 
 export const Erc20Transfer = () => {
-    const[ txnId, setTxnId ] = useState("");
-    const[ error, setError ] = useState("");
+    const[ erc20TxnId, setErc20TxnId ] = useState("");
+    const[ erc20Error, setErc20Error ] = useState("");
     const [ erc20Amount, setErc20Amount ] = useState("0.00");
     const [ recipient, setRecipient ] = useState("Null");
     const user = useUser();
     const oreId = useOreId();
     const chainNetwork = ChainNetwork.EthRopsten;
-    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f";
+    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC
 
     if (!user) return null;
 
     const onError = ( error ) => {
         console.log("Transaction failed ", error);
-        setError( error );
+        setErc20Error( error );
     };
 
     const onSuccess = ( result ) => {
         console.log( 
             "Transaction Successful. ", JSON.stringify(result)
         );
-        setTxnId(result.transactionId);
+        setErc20TxnId(result.transactionId);
     };
 
     const handleSign = async () => {
@@ -124,7 +126,7 @@ export const Erc20Transfer = () => {
             signingAccount,
             recipient,
             erc20Amount
-        );
+        ).then((result) => {console.log(result)}).catch((error) => {setErc20Error(error)});
         console.log( `ERC-20 Transaction Body: ${JSON.stringify(transactionBody)}` );
 
         const transaction = await oreId.createTransaction({
@@ -176,8 +178,8 @@ export const Erc20Transfer = () => {
             </div>
             <br />
             <div>
-                {txnId && <div>Transaction Id: {txnId}</div>}
-                {error && <div>Error: {error.message}</div>}
+                {erc20TxnId && <div>Transaction Id: {erc20TxnId}</div>}
+                {erc20Error && <div>Error: {erc20Error.message}</div>}
             </div>
         </div>
     )
