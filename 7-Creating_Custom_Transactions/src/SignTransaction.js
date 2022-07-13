@@ -45,7 +45,6 @@ export const SignTransaction = () => {
         const transaction = await oreId.createTransaction({
             chainAccount: signingAccount.chainAccount,
             chainNetwork: signingAccount.chainNetwork,
-            //@ts-ignore
             transaction: transactionBody,
             signOptions: {
                 broadcast: true,

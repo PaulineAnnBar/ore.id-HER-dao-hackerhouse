@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { WebPopup } from "oreid-webpopup"
 import { LoginPage } from "./LoginPage";
 import { SignTransaction } from "./SignTransaction";
+import { Erc20Transfer } from "./Erc20Transaction";
 
 const oreId = new OreId({
 appName: "ORE-ID Sample App",
@@ -33,7 +34,9 @@ const AppWithProvider = () => {
         {isLoggedIn ? 
             <div>
                 <SignTransaction />
-            <br />
+                <br />
+                <Erc20Transfer />
+                <br />
                 <LogoutUser />
             </div> 
         : <LoginPage />}

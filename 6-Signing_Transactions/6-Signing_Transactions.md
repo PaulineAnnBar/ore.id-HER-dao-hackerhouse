@@ -40,7 +40,6 @@ export const SignTransaction = () => {
             "Transaction Successful. ", JSON.stringify(result)
         );
         setTxnId(result.transactionId)
-
     };
 
 	return(
@@ -92,7 +91,6 @@ const handleSign = async () => {
         const transaction = await oreId.createTransaction({
             chainAccount: signingAccount.chainAccount,
             chainNetwork: signingAccount.chainNetwork,
-            //@ts-ignore
             transaction: transactionBody,
             signOptions: {
                 broadcast: true,

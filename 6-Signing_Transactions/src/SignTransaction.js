@@ -10,7 +10,7 @@ export const SignTransaction = () => {
     const[ txnId, setTxnId ] = useState("")
     const[ error, setError ] = useState("")
 
-    const onError = (error) => {
+    const onError = ( error ) => {
         console.log("Transaction failed ", error);
         setError( error );
     };
