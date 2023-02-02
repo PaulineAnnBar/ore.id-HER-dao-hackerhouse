@@ -23,17 +23,17 @@ This article series follows the implementation of ORE ID service into a JavaScri
 
 At the end, this guide will have walked you step-by-step through the creation of a simple, but powerful, ORE ID application in React.
 
-This series prepares an ORE ID powered application that will work on the ```Ethereum``` Blockchain.  We use the ```Ropsten``` testnet while developing the application, so real funds are not used.
+This series prepares an ORE ID powered application that will work on the ```Avalanche C-Chain``` Blockchain.  We use the ```Fuji Testnet``` testnet while developing the application, so real funds are not used.
 
-> 💥 Note: The application in this guide can be easily adapted to run on the *```Polygon```* chain.  Look for tips, starting in article six, for info on how to adapt the application for the Polygon Blockchain.  Multi-chain is one of the main facets of the ORE ID service.  Creating apps that work with multiple blockchains will require very minor code changes. Write the code once, and easily operate on different blockchains.
+> 💥 Note: The application in this guide can be easily adapted to run on *```Polygon```*, *```Ethereum```*, *```TELOS EVM```*, etc.  Look for tips, starting in article six, for more info.  Multi-chain is one of the main facets of the ORE ID service.  Creating apps that work with multiple blockchains will require very minor code changes. Write the code once, and easily operate on different blockchains.
 
 ## Tools used in this guide
 
-1. [*oreid-js*](https://www.npmjs.com/package/oreid-js) [4.1.1]
-2. [*oreid-react*](https://www.npmjs.com/package/oreid-react) [1.4.1]
-3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup) [2.0.0]
-4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js) [4.7.1]
-5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) [4.7.0]
+1. [*oreid-js*](https://www.npmjs.com/package/oreid-js) [4.5.0]
+2. [*oreid-react*](https://www.npmjs.com/package/oreid-react) [1.5.0]
+3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup) [2.2.4]
+4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js) [4.9.1]
+5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) [4.12.0]
 
 
 ## How to use this walkthrough
@@ -42,7 +42,7 @@ Each article has a complete set of code.  The code covers the topic discussed in
 
 ### Sign Up for an ORE ID Developer Account
 
-Create a new ORE ID application at https://oreid.io/developer/new-app. Make sure you select Ethereum Ropsten to follow along with this walkthrough.
+Create a new ORE ID application at https://oreid.io/developer/new-app. Make sure you select Avalanche to follow along with this walkthrough.
 
 ### Quick Setup
 This guide comes with a script that will set up the projects in each article's folder for use.  Be sure to first add your app_id to the .env.local-example file.  Then, run the quickstart script by entering the following in the command shell.
@@ -82,4 +82,4 @@ Then, delete the ```oreid-react-walkthrough``` folder.
 
 ## TLDR
 
-This walkthrough was created to show off the core functionality of ORE ID.  ORE ID is a Web3.0 authentication and blockchain interaction service. The goal of this article is to explain how to implement this product into a React application. Follow along to get ORE ID integrated into your application.  You will also learn basic functionality for interacting with the Ethereum Blockchain.
+This walkthrough was created to show off the core functionality of ORE ID.  ORE ID is a Web3.0 authentication and blockchain interaction service. The goal of this article is to explain how to implement this product into a React application using the native ORE ID JS SDK. Follow along to get ORE ID integrated into your application.  You will also learn basic functionality for interacting with the Avalanche C-Chain Blockchain.

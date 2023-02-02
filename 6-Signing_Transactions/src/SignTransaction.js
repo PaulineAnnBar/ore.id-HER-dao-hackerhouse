@@ -6,7 +6,7 @@ import { useOreId, useUser } from "oreid-react";
 export const SignTransaction = () => {
     const oreId = useOreId();
     const user = useUser();
-    const chainNetwork = ChainNetwork.EthRopsten;
+    const chainNetwork = ChainNetwork.AvalancheC_Fuji;
     const[ txnId, setTxnId ] = useState("")
     const[ error, setError ] = useState("")
 

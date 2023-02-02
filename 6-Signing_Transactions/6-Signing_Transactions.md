@@ -8,7 +8,7 @@ It’s time to add real blockchain functionality to our React application.  This
 
 The user will be prompted to input their password/pin.  Then, ORE ID service will do the work by preparing and sending your *```transaction```* to the blockchain.  Returned, is the transaction's *```blockchain id```* and ORE ID service process id.  
 
-This article will use *```Ethereum```* (also included are instructions on how to adapt this code to *```Polygon```*). But, later in the series, examples of other supported chains will be demo’d.  Let’s get started by creating a *SignTransaction.js* file.  This will hold the new React component being built in this article.
+This article will use *```Avalanche C-Chain```* (also included are instructions on how to adapt this code to *```Polygon```*). But, later in the series, examples of other supported chains will be demo’d.  Let’s get started by creating a *SignTransaction.js* file.  This will hold the new React component being built in this article.
 
 1. Import the dependencies of our new module.
 
@@ -26,7 +26,7 @@ import { useOreId, useUser } from "oreid-react";
 export const SignTransaction = () => {
     const oreId = useOreId();
     const user = useUser();
-    const chainNetwork = ChainNetwork.EthRopsten;
+    const chainNetwork = ChainNetwork.AvalancheC_Fuji;
     const[ txnId, setTxnId ] = useState("");
     const[ error, setError ] = useState("");
 
@@ -53,11 +53,11 @@ export const SignTransaction = () => {
     );
 }
 ```
-> 💥 Polygon adaption!  To interact with the Polygon blockchain, change the *```chainNetwork```* variable from ```ChainNetwork.EthRopsten``` to ```'polygon_mumbai'```.  Resulting in the line  <br />
+> 💥 Polygon adaption!  To interact with the Polygon blockchain, change the *```chainNetwork```* variable from ```ChainNetwork.AvalancheC_Fuji``` to ```'polygon_mumbai'```.  Resulting in the line  <br />
  ```const chainNetwork = 'polygon_mumbai'```.  
  Your ORE ID application will have to be set for Polygon Mumbai network.  The application network can currently only be chosen while creating a new app.  If you did not select Polygon when the ORE ID application was created;  You can create a new app [here](https://oreid.io/developer/new-app).
 
-3. Next, create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Ethereum blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
+3. Next, create another function named *```handleSign()```.* This will contain the creation of the transaction and presentation of the webpopup. First, we need to know the user’s Ehereum Address to fill out the transaction. The logged in user’s Avalanche C-Chain blockchain account is grabbed from the ORE ID service.  The function will return an error if a chainNetwork account can’t be found for that user.
 
 ```jsx
 const handleSign = async () => {
@@ -126,7 +126,7 @@ Test the transaction and you will be prompted to enter your password/pin.
 ![Sign Prompt](./sign_prompt.png)
 
 
-Upon successful entry of password/pin, the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Ropsten testnet faucet to add testnet funds to your chainNetwork account. Revisit step 3 for the code to find your ethereum blockchain account.
+Upon successful entry of password/pin, the transaction will be sent to the blockchain.  You will most likely be presented with an error.  This is becuase you currently do not have any funds in your account.  Use a Fuji testnet faucet to add testnet funds to your chainNetwork account. Revisit step 3 for the code to find your ethereum blockchain account.
 
 ## Troubleshooting
 
@@ -149,4 +149,4 @@ Error: sign_transaction_rejected&error_message=ChainErrorType:TxExceededResource
 ```
 
 > ✅ Solution: <br />
-You do not have enough funds in your chainAccount to perform the requested action.  Add Ropsten testnet funds using a faucet (Ex: https://faucet.egorfine.com/).
+You do not have enough funds in your chainAccount to perform the requested action.  Add Fuji testnet funds using a faucet (Ex: https://faucet.egorfine.com/).
