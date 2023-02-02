@@ -22,5 +22,5 @@ echo "Installing packages in 7-Creating_Custom_Transactions"
 cd ../7-Creating_Custom_Transactions
 yarn install
 
-echo "Use yarn start in each folder to run that article's sample"
+echo "Use `yarn start` in each folder to run that article's sample"
 
