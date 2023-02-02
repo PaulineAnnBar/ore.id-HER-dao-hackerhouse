@@ -9,9 +9,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "oreid-js":"4.1.1",
-    "oreid-react": "1.4.1",
-    "oreid-webpopup": "^2.0.0",
+    "oreid-js":"4.5.0",
+    "oreid-react": "1.5.0",
+    "oreid-webpopup": "^2.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
