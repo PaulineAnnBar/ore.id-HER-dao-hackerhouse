@@ -24,22 +24,23 @@ export const SignTransaction = () => {
 
     const handleSign = async () => {
         const signingAccount = user.chainAccounts.find(
-            (ca) => ca.chainNetwork ===  chainNetwork
+            (ca) => ca.chainNetwork === chainNetwork
         );
-    
-        console.log( `Signing Account for ETH Ropsten: ${signingAccount.chainAccount}`)
-        const errorMsg = `User does not have any accounts on ${chainNetwork}`;
-    
+        
         if (!signingAccount) {
-            console.log( errorMsg );
+            const errorMsg = `User does not have any accounts on ${chainNetwork}`;
             onError( errorMsg )
             return;
         };
+
+        console.log( `Signing Account for ETH Ropsten: ${signingAccount.chainAccount}`)
     
         const transactionBody = {
             from: signingAccount.chainAccount,
             to: signingAccount.chainAccount,
-            value: 0
+            value: 0,
+            gasLimit: "36000",
+            gasPrice: "0.000000020"
         };
 
         const transaction = await oreId.createTransaction({

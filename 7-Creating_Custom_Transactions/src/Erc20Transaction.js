@@ -1,10 +1,10 @@
 import { PluginChainFactory, Models } from "@open-rights-exchange/chain-js";
 import { Plugin as EthereumPlugin, ModelsEthereum } from "@open-rights-exchange/chain-js-plugin-ethereum";
+import { toEthereumAddress } from "@open-rights-exchange/chain-js-plugin-ethereum/dist/cjs/src/plugin/helpers";
+import { TxExecutionPriority } from "@open-rights-exchange/chain-js/dist/cjs/src/models";
 import React, { useState } from "react";
 import { ChainNetwork } from "oreid-js";
 import { useOreId, useUser } from "oreid-react";
-import { toEthereumAddress } from "@open-rights-exchange/chain-js-plugin-ethereum/dist/cjs/src/plugin/helpers";
-import { TxExecutionPriority } from "@open-rights-exchange/chain-js/dist/cjs/src/models";
 
 
 const getChainAccount = (user, chainNetwork) => {
@@ -70,7 +70,6 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
     const action = await chain.composeAction(
         ModelsEthereum.EthereumChainActionType.ERC20Transfer,
         composeErc20TransferParams
-    // ).then((result) => {console.log(result)}).catch(({error}) => {console.log( error.message)});
     );
 // 
     transactionBody.actions = [action];
@@ -87,7 +86,6 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
 
 };
 
-
 export const Erc20Transfer = () => {
     const[ erc20TxnId, setErc20TxnId ] = useState("");
     const[ erc20Error, setErc20Error ] = useState("");
@@ -96,7 +94,7 @@ export const Erc20Transfer = () => {
     const user = useUser();
     const oreId = useOreId();
     const chainNetwork = ChainNetwork.EthRopsten;
-    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC
+    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC on Ropsten
 
     if (!user) return null;
 
