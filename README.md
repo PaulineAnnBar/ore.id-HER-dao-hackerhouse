@@ -32,8 +32,8 @@ This series prepares an ORE ID powered application that will work on the ```Aval
 1. [*oreid-js*](https://www.npmjs.com/package/oreid-js) [4.5.0]
 2. [*oreid-react*](https://www.npmjs.com/package/oreid-react) [1.5.0]
 3. [*oreid-webpopup*](https://www.npmjs.com/package/oreid-webpopup) [2.2.4]
-4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js) [4.7.1]
-5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) [4.7.0]
+4. [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js) [4.9.1]
+5. [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) [4.12.0]
 
 
 ## How to use this walkthrough
