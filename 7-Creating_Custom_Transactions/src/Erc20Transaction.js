@@ -29,13 +29,12 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
     const connectChain = async ( ) => {
         const endpoints = [
             {
-                url: new URL('https://ropsten.infura.io/v3/fc379c787fde4363b91a61a345e3620a'),
+                url: new URL('https://api.avax-test.network/ext/bc/C/rpc'),
             },
         ];
 
         const chainOptions = {
-            chainName: 'ropsten',
-            hardFork: 'istanbul',
+            chainName: 'fuji'
         };
 
         const chainType = Models.ChainType.EthereumV1;
@@ -64,7 +63,7 @@ const createErc20TransferTxn = async (contractAddress, signingAccount, recipient
         to: toEthereumAddress(recipient),
         from:  toEthereumAddress(signingAccount.chainAccount),
         value: amount,
-        precision: 18,
+        precision: 6,
     };
 
     const action = await chain.composeAction(
@@ -94,7 +93,7 @@ export const Erc20Transfer = () => {
     const user = useUser();
     const oreId = useOreId();
     const chainNetwork = ChainNetwork.AvalancheC_Fuji;
-    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC on Fuji
+    const contractAddress = "0x5425890298aed601595a70AB815c96711a31Bc65"; // ERC-20 Smart contract address for USDC on Fuji
 
     if (!user) return null;
 
@@ -124,7 +123,8 @@ export const Erc20Transfer = () => {
             signingAccount,
             recipient,
             erc20Amount
-        ).then((result) => {console.log(result)}).catch((error) => {setErc20Error(error)});
+        )
+        // ).then((result) => {console.log(result)}).catch((error) => {setErc20Error(error)});
         console.log( `ERC-20 Transaction Body: ${JSON.stringify(transactionBody)}` );
 
         const transaction = await oreId.createTransaction({

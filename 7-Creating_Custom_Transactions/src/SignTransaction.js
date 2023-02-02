@@ -33,14 +33,14 @@ export const SignTransaction = () => {
             return;
         };
 
-        console.log( `Signing Account for ETH Fuji: ${signingAccount.chainAccount}`)
+        console.log( `Signing Account for AVAX Fuji: ${signingAccount.chainAccount}`)
     
         const transactionBody = {
             from: signingAccount.chainAccount,
             to: signingAccount.chainAccount,
             value: 0,
-            gasLimit: "36000",
-            gasPrice: "0.000000020"
+            // gasLimit: "36000",
+            // gasPrice: "0.000000020"
         };
 
         const transaction = await oreId.createTransaction({
