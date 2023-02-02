@@ -93,8 +93,8 @@ export const Erc20Transfer = () => {
     const [ recipient, setRecipient ] = useState("Null");
     const user = useUser();
     const oreId = useOreId();
-    const chainNetwork = ChainNetwork.EthRopsten;
-    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC on Ropsten
+    const chainNetwork = ChainNetwork.AvalancheC_Fuji;
+    const contractAddress = "0x07865c6e87b9f70255377e024ace6630c1eaa37f"; // ERC-20 Smart contract address for USDC on Fuji
 
     if (!user) return null;
 
