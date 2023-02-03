@@ -4,11 +4,11 @@
 📢 What this article covers: Interact with smart contract using Chain-js
 ```
 
-ORE ID can interact with any smart contract on the Avalanche C-Chain network. This article walks you through the creation of more complex blockchain transactions using the open source tool set known as *```Chain-Js```*  We will explore how to interact with an ERC-20 smart contract to transfer tokens.
+ORE ID can interact with any smart contract on the Avalanche C-Chain network. This article walks you through the creation of more complex blockchain transactions using the open source tool set known as *```Chain-Js```*  Let's explore how to interact with an ERC-20 smart contract to transfer tokens.
 
 1. To create more complex transactions, the base package [*@open-rights-exchange/chain-js*](https://www.npmjs.com/package/@open-rights-exchange/chain-js), along with the plugin package [*@open-rights-exchange/chain-js-plugin-ethereum*](https://www.npmjs.com/package/@open-rights-exchange/chain-js-plugin-ethereum) must be added to the project.
 
-```plaintext
+```shell
 yarn add @open-rights-exchange/chain-js
 yarn add @open-rights-exchange/chain-js-plugin-ethereum
 ```
@@ -19,14 +19,20 @@ yarn add @open-rights-exchange/chain-js-plugin-ethereum
 // Erc20Transaction.js
 
 import { PluginChainFactory, Models } from "@open-rights-exchange/chain-js";
-import { Plugin as Avalanche C-ChainPlugin } from "@open-rights-exchange/chain-js-plugin-ethereum";
+import { Plugin as EthPlugin } from "@open-rights-exchange/chain-js-plugin-ethereum";
 
 ```
 
+## Adding react-app-rewired to React App
 
-```text
+> For testing purposes
+1. Add the *```react-app-rewired```* package to the React App. 
+
+```shell
 yarn add --dev react-app-rewired process crypto-browserify stream-browserify assert stream-http https-browserify os-browserify url buffer
 ```
+
+2. Create a new file *config-overids.js*
 
 ```jsx
 /// config-overides.js
@@ -56,6 +62,8 @@ module.exports = function override(config) {
 }
 ```
 
+3. Modify the *package.json* file.
+
 ```jsx
 // package.json
 // ...
@@ -70,6 +78,10 @@ module.exports = function override(config) {
 // ...
 ```
 
+
+## Alternative chainNetworks
+
+Polygon Mumbai Testnet
 ```jsx
 const chainNetwork = ChainNetwork.PolygonMumbai
 
